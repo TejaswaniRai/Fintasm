@@ -33,7 +33,7 @@ Fintasm is built **for Gen Z**:
 ---
 
 ## ⚙️ Tech Stack
-- **Next.js 14** — hybrid React framework
+- **Next.js** —  React framework
 - **Tailwind CSS** + custom gradients & glassmorphism
 - **Framer Motion** — smooth, animated UI
 - **Lucide-react & Radix UI** — beautiful icons & components
