@@ -1,0 +1,233 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 48 96% 90%; /* Light yellow background */
+    --foreground: 0 0% 0%; /* Black foreground */
+    --card: 48 96% 95%; /* Even lighter yellow for cards */
+    --card-foreground: 0 0% 0%; /* Black */
+    --popover: 48 96% 95%; /* Lighter yellow */
+    --popover-foreground: 0 0% 0%; /* Black */
+    --primary: 25 95% 53%; /* Vibrant orange/yellow for primary actions */
+    --primary-foreground: 0 0% 0%; /* Black */
+    --secondary: 48 96% 80%; /* Slightly darker yellow for secondary elements */
+    --secondary-foreground: 0 0% 0%; /* Black */
+    --muted: 48 96% 85%;
+    --muted-foreground: 0 0% 20%; /* Dark gray */
+    --accent: 48 96% 80%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%; /* Red, keep as is for destructive actions */
+    --destructive-foreground: 0 0% 0%; /* Black */
+    --border: 48 96% 70%;
+    --input: 48 96% 70%;
+    --ring: 25 95% 53%;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 210 100% 2%;
+    --foreground: 213 31% 91%;
+    --card: 210 100% 3%;
+    --card-foreground: 213 31% 91%;
+    --popover: 210 100% 3%;
+    --popover-foreground: 213 31% 91%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 222.2 32% 5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 223 47% 8%;
+    --muted-foreground: 215.4 16.3% 56.9%;
+    --accent: 216 34% 12%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 216 34% 12%;
+    --input: 216 34% 12%;
+    --ring: 216 34% 17%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+/* Custom Gradients */
+.gradient-purple-cyan {
+  background: linear-gradient(135deg, #8b5cf6 0%, #06b6d4 100%);
+}
+
+.gradient-pink-orange {
+  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
+}
+
+.gradient-blue-purple {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+}
+
+.gradient-green-blue {
+  background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+}
+
+.gradient-yellow-red {
+  background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+}
+
+/* Glass Effect */
+.glass-effect {
+  background: rgba(0, 0, 0, 0.05); /* A very light black tint */
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Darker border */
+}
+
+.dark .glass-effect {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Neon Glow Effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  transition: all 0.3s ease;
+}
+
+.neon-glow:hover {
+  box-shadow: 0 0 30px rgba(139, 92, 246, 0.5);
+  transform: translateY(-2px);
+}
+
+/* Advanced Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-scale {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+.pulse-scale {
+  animation: pulse-scale 2s ease-in-out infinite;
+}
+
+.shimmer {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+.gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #06b6d4);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #7c3aed, #0891b2);
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-orbitron);
+  font-weight: 700;
+}
+
+.font-body {
+  font-family: var(--font-space-grotesk);
+}
+
+.font-mono {
+  font-family: var(--font-rajdhani);
+}
+
+.font-accent {
+  font-family: var(--font-exo2);
+}
+
+@keyframes money-fly {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-200px) rotate(180deg) scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-400px) rotate(360deg) scale(0.5);
+    opacity: 0;
+  }
+}
+
+.money-fly {
+  animation: money-fly 2s ease-out forwards;
+}
+
+/* Accessibility: Screen Reader Only */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
